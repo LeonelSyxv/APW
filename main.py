@@ -20,7 +20,7 @@ threading.Thread(
 # Start background thread to monitor new reports
 threading.Thread(
     target=latest_watcher,
-    args=(15, whatsapp_lock, recently_resolved_channels),
+    args=(15, whatsapp_lock),
     daemon=True
 ).start()
 
