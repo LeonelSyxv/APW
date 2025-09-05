@@ -3,6 +3,7 @@ from datetime import datetime
 from Database.db import get_connection
 import pyautogui
 import pyperclip
+from Utils.whatsapp_sender import INPUT_X, INPUT_Y
 
 pyautogui.FAILSAFE = False
 
@@ -50,6 +51,8 @@ def resolved_watcher(poll_interval=30, whatsapp_lock=None, recently_resolved_cha
                         )
 
                         with whatsapp_lock:
+                            pyautogui.click(INPUT_X, INPUT_Y)
+                            time.sleep(0.5)
                             pyperclip.copy(message)
                             pyautogui.hotkey("ctrl", "v")
                             time.sleep(1)

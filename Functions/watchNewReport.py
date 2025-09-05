@@ -3,10 +3,11 @@ import pyautogui
 import pyperclip
 from collections import defaultdict
 from Database.db import get_connection
+from Utils.whatsapp_sender import INPUT_X, INPUT_Y
 
 pyautogui.FAILSAFE = False
 
-def latest_watcher(poll_interval=30, whatsapp_lock=None, recently_resolved_channels=None):
+def latest_watcher(poll_interval=30, whatsapp_lock=None):
     print("Listening for latest 'Momentary' report in 'Revision' status...")
 
     processed_report_ids = set()
@@ -117,6 +118,8 @@ def latest_watcher(poll_interval=30, whatsapp_lock=None, recently_resolved_chann
 
                     if whatsapp_lock:
                         with whatsapp_lock:
+                            pyautogui.click(INPUT_X, INPUT_Y)
+                            time.sleep(0.5)
                             pyperclip.copy(message)
                             pyautogui.hotkey("ctrl", "v")
                             time.sleep(1)

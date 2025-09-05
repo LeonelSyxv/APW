@@ -3,8 +3,8 @@ import pyperclip
 import time
 
 # Reemplaza estos valores con las coordenadas reales del input de WhatsApp Web
-INPUT_X = 552  # ejemplo
-INPUT_Y = 220  # ejemplo
+INPUT_X = 170  # coordenada actualizada
+INPUT_Y = 390  # coordenada actualizada
 
 
 def enviar_mensaje_whatsapp(mensaje):
